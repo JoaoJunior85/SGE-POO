@@ -42,13 +42,15 @@ public class janelaEleitor extends javax.swing.JFrame {
         radioMasculino = new javax.swing.JRadioButton();
         radioFemenino = new javax.swing.JRadioButton();
         txtMorada = new javax.swing.JTextField();
-        comboDistrito = new javax.swing.JComboBox<String>();
+        comboDistrito = new javax.swing.JComboBox<>();
         txtBI = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro do Eleitor");
+        setPreferredSize(new java.awt.Dimension(929, 600));
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(170, 103, 58));
 
@@ -110,7 +112,7 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         comboDistrito.setBackground(new java.awt.Color(244, 244, 146));
         comboDistrito.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        comboDistrito.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboDistrito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboDistrito.setSelectedIndex(-1);
         comboDistrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

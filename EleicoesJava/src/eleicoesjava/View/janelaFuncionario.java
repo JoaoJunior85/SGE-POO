@@ -43,6 +43,7 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro do Eleitor");
+        setPreferredSize(new java.awt.Dimension(929, 600));
 
         jPanel2.setBackground(new java.awt.Color(170, 103, 58));
 

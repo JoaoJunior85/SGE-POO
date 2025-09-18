@@ -48,6 +48,7 @@ public class janelaCandidatos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Registo de Candidatos");
+        setMaximumSize(new java.awt.Dimension(929, 600));
 
         jPanel1.setBackground(new java.awt.Color(170, 103, 58));
 
