@@ -7,15 +7,14 @@ public class Candidato   extends Eleitor implements  Idade{
     private Partido part;
     private Integer numVotosCand;
 
-    public Candidato(int numCandidato, String senha, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String moradia) {
+    public Candidato(int numCandidato, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String moradia) {
         super(nome, BI, genero, sobrenome, dataNasc, moradia);
         this.numCandidato = numCandidato;
-        this.senha = senha;
         this.part = part;
         this.numVotosCand = numVotosCand;
     }
 
-    public Candidato(int numCandidato, String senha, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String moradia) {
+    public Candidato(int numCandidato,  Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String moradia) {
         super(nome, BI, genero, sobrenome, dataNasc, moradia);
         this.numCandidato = numCandidato;
         this.senha = senha;

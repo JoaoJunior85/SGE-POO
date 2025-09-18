@@ -4,10 +4,6 @@
  */
 package Model.Dao;
 
-/**
- *
- * @author Dell
- */
 public class CandidatoDao {
     
 }
