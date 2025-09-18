@@ -39,11 +39,10 @@ public class janelaEleitor extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtSobrenome = new javax.swing.JTextField();
-        calendario = new com.toedter.calendar.JDateChooser();
         radioMasculino = new javax.swing.JRadioButton();
         radioFemenino = new javax.swing.JRadioButton();
         txtMorada = new javax.swing.JTextField();
-        comboDistrito = new javax.swing.JComboBox<>();
+        comboDistrito = new javax.swing.JComboBox<String>();
         txtBI = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -79,7 +78,6 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         txtNome.setBackground(new java.awt.Color(244, 244, 146));
         txtNome.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtNome.setForeground(new java.awt.Color(0, 0, 0));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -88,10 +86,6 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         txtSobrenome.setBackground(new java.awt.Color(244, 244, 146));
         txtSobrenome.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtSobrenome.setForeground(new java.awt.Color(0, 0, 0));
-
-        calendario.setBackground(new java.awt.Color(244, 244, 146));
-        calendario.setForeground(new java.awt.Color(0, 0, 0));
 
         grupoGenero.add(radioMasculino);
         radioMasculino.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
@@ -108,7 +102,6 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         txtMorada.setBackground(new java.awt.Color(244, 244, 146));
         txtMorada.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtMorada.setForeground(new java.awt.Color(0, 0, 0));
         txtMorada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMoradaActionPerformed(evt);
@@ -117,8 +110,7 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         comboDistrito.setBackground(new java.awt.Color(244, 244, 146));
         comboDistrito.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        comboDistrito.setForeground(new java.awt.Color(0, 0, 0));
-        comboDistrito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        comboDistrito.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         comboDistrito.setSelectedIndex(-1);
         comboDistrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +120,6 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         txtBI.setBackground(new java.awt.Color(244, 244, 146));
         txtBI.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtBI.setForeground(new java.awt.Color(0, 0, 0));
         txtBI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBIActionPerformed(evt);
@@ -163,10 +154,7 @@ public class janelaEleitor extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel13)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel10)
                         .addGroup(jPanel2Layout.createSequentialGroup()
@@ -204,7 +192,7 @@ public class janelaEleitor extends javax.swing.JFrame {
                                     .addComponent(txtMorada, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtBI)
                                     .addComponent(comboDistrito, 0, 186, Short.MAX_VALUE))))))
-                .addContainerGap(325, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,9 +209,7 @@ public class janelaEleitor extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txtSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(calendario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel13)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -328,7 +314,6 @@ public class janelaEleitor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private com.toedter.calendar.JDateChooser calendario;
     private javax.swing.JComboBox<String> comboDistrito;
     private javax.swing.ButtonGroup grupoGenero;
     private javax.swing.JButton jButton1;
