@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package eleicoesjava.View;
 
 /**
@@ -39,7 +35,7 @@ public class janelaEleitor extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtSobrenome = new javax.swing.JTextField();
-        calendario = new com.toedter.calendar.JDateChooser();
+        calendario = new org.netbeans.modules.form.InvalidComponent();
         radioMasculino = new javax.swing.JRadioButton();
         radioFemenino = new javax.swing.JRadioButton();
         txtMorada = new javax.swing.JTextField();
@@ -89,9 +85,6 @@ public class janelaEleitor extends javax.swing.JFrame {
         txtSobrenome.setBackground(new java.awt.Color(244, 244, 146));
         txtSobrenome.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
         txtSobrenome.setForeground(new java.awt.Color(0, 0, 0));
-
-        calendario.setBackground(new java.awt.Color(244, 244, 146));
-        calendario.setForeground(new java.awt.Color(0, 0, 0));
 
         grupoGenero.add(radioMasculino);
         radioMasculino.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
@@ -203,7 +196,7 @@ public class janelaEleitor extends javax.swing.JFrame {
                                         .addComponent(radioFemenino))
                                     .addComponent(txtMorada, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(txtBI)
-                                    .addComponent(comboDistrito, 0, 186, Short.MAX_VALUE))))))
+                                    .addComponent(comboDistrito, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addContainerGap(325, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -328,7 +321,7 @@ public class janelaEleitor extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
-    private com.toedter.calendar.JDateChooser calendario;
+    private org.netbeans.modules.form.InvalidComponent calendario;
     private javax.swing.JComboBox<String> comboDistrito;
     private javax.swing.ButtonGroup grupoGenero;
     private javax.swing.JButton jButton1;
