@@ -1,25 +1,27 @@
 
 
 package eleicoesjava.Modelo;
-public class Candidato   extends Eleitor implements  Idade{
+public class Candidato   extends Eleitor {
     private int numCandidato;
     private  String senha;
     private Partido part;
     private Integer numVotosCand;
 
-    public Candidato(int numCandidato, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String moradia) {
-        super(nome, BI, genero, sobrenome, dataNasc, moradia);
+    public Candidato(int numCandidato, String senha, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
+        super(nome, BI, genero, sobrenome, dataNasc, Moradia, Distrito);
         this.numCandidato = numCandidato;
+        this.senha = senha;
         this.part = part;
         this.numVotosCand = numVotosCand;
     }
 
-    public Candidato(int numCandidato,  Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String moradia) {
-        super(nome, BI, genero, sobrenome, dataNasc, moradia);
+    public Candidato(int numCandidato, String senha, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
+        super(nome, BI, genero, sobrenome, dataNasc, Moradia, Distrito);
         this.numCandidato = numCandidato;
         this.senha = senha;
         this.numVotosCand = numVotosCand;
     }
+
     
     
 
@@ -52,11 +54,6 @@ public class Candidato   extends Eleitor implements  Idade{
 
     public void setPart(Partido part) {
         this.part = part;
-    }
-
-    @Override
-    public void verificaIdade() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override

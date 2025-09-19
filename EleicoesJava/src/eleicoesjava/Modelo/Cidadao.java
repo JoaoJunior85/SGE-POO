@@ -3,14 +3,16 @@
 package eleicoesjava.Modelo;
 
 public abstract class Cidadao {
-    private String nome , BI,genero,sobrenome,dataNasc;
+    private String nome , BI,genero,sobrenome,dataNasc,Moradia,Distrito;
 
-    public Cidadao(String nome, String BI, String genero, String sobrenome, String dataNasc) {
+    public Cidadao(String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
         this.nome = nome;
         this.BI = BI;
         this.genero = genero;
         this.sobrenome = sobrenome;
         this.dataNasc = dataNasc;
+        this.Moradia = Moradia;
+        this.Distrito = Distrito;
     }
 
     public String getNome() {
@@ -37,6 +39,11 @@ public abstract class Cidadao {
         this.genero = genero;
     }
 
+    @Override
+    public String toString() {
+        return "Cidadao{" + "nome=" + nome + ", BI=" + BI + ", genero=" + genero + ", sobrenome=" + sobrenome + ", dataNasc=" + dataNasc + ", Moradia=" + Moradia + ", Distrito=" + Distrito + '}';
+    }
+
     public String getSobrenome() {
         return sobrenome;
     }
@@ -52,7 +59,22 @@ public abstract class Cidadao {
     public void setDataNasc(String dataNasc) {
         this.dataNasc = dataNasc;
     }
-    
+
+    public String getMoradia() {
+        return Moradia;
+    }
+
+    public void setMoradia(String Moradia) {
+        this.Moradia = Moradia;
+    }
+
+    public String getDistrito() {
+        return Distrito;
+    }
+
+    public void setDistrito(String Distrito) {
+        this.Distrito = Distrito;
+    }
     
 
             
