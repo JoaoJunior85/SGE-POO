@@ -52,7 +52,7 @@ public class TabelaEleitor extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Sobrenome", "B.I", "Nasciento", "Distrito"
+                "ID", "Nome", "Sobrenome", "B.I", "Nascimento", "Distrito"
             }
         ) {
             boolean[] canEdit = new boolean [] {

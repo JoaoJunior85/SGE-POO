@@ -1,36 +1,29 @@
 
 
 package eleicoesjava.Modelo;
+
+import java.util.Date;
+
 public class Candidato   extends Eleitor {
     private int numCandidato;
     private  String senha;
     private Partido part;
     private Integer numVotosCand;
 
-    public Candidato(int numCandidato, String senha, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
-        super(nome, BI, genero, sobrenome, dataNasc, Moradia, Distrito);
+    public Candidato(int numCandidato, String senha, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
+        super(nome, BI, genero, sobrenome, Moradia, Distrito, dataNac);
         this.numCandidato = numCandidato;
         this.senha = senha;
         this.part = part;
         this.numVotosCand = numVotosCand;
     }
 
-    public Candidato(int numCandidato, String senha, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
-        super(nome, BI, genero, sobrenome, dataNasc, Moradia, Distrito);
+    public Candidato(int numCandidato, String senha, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
+        super(nome, BI, genero, sobrenome, Moradia, Distrito, dataNac);
         this.numCandidato = numCandidato;
         this.senha = senha;
         this.numVotosCand = numVotosCand;
     }
-
-    
-    
-
-
-    
-
-    
-
- 
 
     public int getNumCandidato() {
         return numCandidato;

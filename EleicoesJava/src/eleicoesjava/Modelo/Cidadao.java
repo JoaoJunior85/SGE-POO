@@ -2,18 +2,23 @@
 
 package eleicoesjava.Modelo;
 
-public abstract class Cidadao {
-    private String nome , BI,genero,sobrenome,dataNasc,Moradia,Distrito;
+import java.util.Date;
 
-    public Cidadao(String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
+public abstract class Cidadao {
+    private String nome , BI,genero,sobrenome,Moradia,Distrito;
+    private  Date dataNasc;
+
+    public Cidadao(String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
         this.nome = nome;
         this.BI = BI;
         this.genero = genero;
         this.sobrenome = sobrenome;
-        this.dataNasc = dataNasc;
         this.Moradia = Moradia;
         this.Distrito = Distrito;
+        this.dataNasc = dataNac;
     }
+
+    
 
     public String getNome() {
         return nome;
@@ -52,11 +57,11 @@ public abstract class Cidadao {
         this.sobrenome = sobrenome;
     }
 
-    public String getDataNasc() {
+    public Date  getDataNasc() {
         return dataNasc;
     }
 
-    public void setDataNasc(String dataNasc) {
+    public void setDataNasc(Date  dataNasc) {
         this.dataNasc = dataNasc;
     }
 

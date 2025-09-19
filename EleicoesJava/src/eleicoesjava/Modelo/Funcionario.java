@@ -5,17 +5,20 @@
 
 package eleicoesjava.Modelo;
 
+import java.util.Date;
+
 
 
 public class Funcionario  extends Eleitor  {
     private String codigoFuncionario, ID,celular;
 
-    public Funcionario(String codigoFuncionario, String celular, String nome, String BI, String genero, String sobrenome, String dataNasc, String Moradia, String Distrito) {
-        super(nome, BI, genero, sobrenome, dataNasc, Moradia, Distrito);
+    public Funcionario(String codigoFuncionario, String ID, String celular, String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
+        super(nome, BI, genero, sobrenome, Moradia, Distrito, dataNac);
         this.codigoFuncionario = codigoFuncionario;
-      
+        this.ID = ID;
         this.celular = celular;
     }
+
 
     public String getCodigoFuncionario() {
         return codigoFuncionario;
