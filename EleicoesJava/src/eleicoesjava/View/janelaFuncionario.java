@@ -32,7 +32,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         txtNome = new javax.swing.JTextField();
         txtSobrenome = new javax.swing.JTextField();
-        calendario = new com.toedter.calendar.JDateChooser();
         radioMasculino = new javax.swing.JRadioButton();
         radioFemenino = new javax.swing.JRadioButton();
         txtMorada = new javax.swing.JTextField();
@@ -44,6 +43,7 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro do Eleitor");
+        setPreferredSize(new java.awt.Dimension(929, 600));
 
         jPanel2.setBackground(new java.awt.Color(170, 103, 58));
 
@@ -73,7 +73,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         txtNome.setBackground(new java.awt.Color(244, 244, 146));
         txtNome.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtNome.setForeground(new java.awt.Color(0, 0, 0));
         txtNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomeActionPerformed(evt);
@@ -82,10 +81,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         txtSobrenome.setBackground(new java.awt.Color(244, 244, 146));
         txtSobrenome.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtSobrenome.setForeground(new java.awt.Color(0, 0, 0));
-
-        calendario.setBackground(new java.awt.Color(244, 244, 146));
-        calendario.setForeground(new java.awt.Color(63, 255, 0));
 
         grupoGenero.add(radioMasculino);
         radioMasculino.setFont(new java.awt.Font("Segoe UI Black", 2, 12)); // NOI18N
@@ -102,7 +97,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         txtMorada.setBackground(new java.awt.Color(244, 244, 146));
         txtMorada.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtMorada.setForeground(new java.awt.Color(0, 0, 0));
         txtMorada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMoradaActionPerformed(evt);
@@ -111,7 +105,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         txtBI.setBackground(new java.awt.Color(244, 244, 146));
         txtBI.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtBI.setForeground(new java.awt.Color(0, 0, 0));
         txtBI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtBIActionPerformed(evt);
@@ -120,7 +113,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
 
         txtCelular.setBackground(new java.awt.Color(244, 244, 146));
         txtCelular.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        txtCelular.setForeground(new java.awt.Color(0, 0, 0));
         txtCelular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCelularActionPerformed(evt);
@@ -162,10 +154,7 @@ public class janelaFuncionario extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel13)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(calendario, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel13)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jLabel10)
                         .addGroup(jPanel2Layout.createSequentialGroup()
@@ -196,14 +185,14 @@ public class janelaFuncionario extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(radioFemenino))
                                     .addComponent(txtMorada, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                                    .addComponent(txtCelular)
                                     .addComponent(txtBI)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(53, 53, 53)
                                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -220,9 +209,7 @@ public class janelaFuncionario extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(txtSobrenome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(calendario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel13)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -238,7 +225,7 @@ public class janelaFuncionario extends javax.swing.JFrame {
                     .addComponent(txtBI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(txtCelular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jCheckBox1)
@@ -335,7 +322,6 @@ public class janelaFuncionario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.toedter.calendar.JDateChooser calendario;
     private javax.swing.ButtonGroup grupoGenero;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton3;
