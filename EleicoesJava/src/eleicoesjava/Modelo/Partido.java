@@ -2,20 +2,21 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-
 package eleicoesjava.Modelo;
 
-public  class Partido {
-private String nome;
-private Candidato can;
-private Integer numVotosPart;
+public class Partido {
 
-    public Partido(String nome, Candidato can, Integer numVotosPart) {
+    private int id;
+    private String nome;
+    private Candidato can;
+    private Integer numVotosPart;
+
+   public Partido(int id, String nome, Candidato can, Integer numVotosPart) {
+        this.id = id;
         this.nome = nome;
         this.can = can;
         this.numVotosPart = numVotosPart;
     }
-
     public String getNome() {
         return nome;
     }
@@ -40,6 +41,4 @@ private Integer numVotosPart;
         this.numVotosPart = numVotosPart;
     }
 
-
 }
-

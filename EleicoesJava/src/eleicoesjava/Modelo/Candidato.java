@@ -10,20 +10,19 @@ public class Candidato   extends Eleitor {
     private Partido part;
     private Integer numVotosCand;
 
-    public Candidato(int numCandidato, String senha, Partido part, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
-        super(nome, BI, genero, sobrenome, Moradia, Distrito, dataNac);
+    public Candidato(int numCandidato, String senha, Partido part, Integer numVotosCand, String codigo, int id, String nome, String BI, String genero, String Moradia, String Distrito, Date dataNasc) {
+        super(codigo, id, nome, BI, genero, Moradia, Distrito, dataNasc);
         this.numCandidato = numCandidato;
         this.senha = senha;
         this.part = part;
         this.numVotosCand = numVotosCand;
     }
 
-    public Candidato(int numCandidato, String senha, Integer numVotosCand, String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
-        super(nome, BI, genero, sobrenome, Moradia, Distrito, dataNac);
-        this.numCandidato = numCandidato;
-        this.senha = senha;
-        this.numVotosCand = numVotosCand;
+    public Candidato() {
+        super();
     }
+    
+    
 
     public int getNumCandidato() {
         return numCandidato;
@@ -52,6 +51,14 @@ public class Candidato   extends Eleitor {
     @Override
     public String toString() {
         return "Candidato{" + "numCandidato=" + numCandidato + ", senha=" + senha + ", part=" + part + ", numVotosCand=" + numVotosCand + '}';
+    }
+
+    public Integer getNumVotosCand() {
+        return numVotosCand;
+    }
+
+    public void setNumVotosCand(Integer numVotosCand) {
+        this.numVotosCand = numVotosCand;
     }
     
     

@@ -5,21 +5,24 @@ package eleicoesjava.Modelo;
 import java.util.Date;
 
 public abstract class Cidadao {
-    private String nome , BI,genero,sobrenome,Moradia,Distrito;
+    private int id; 
+    private String nome , BI,genero,Moradia,Distrito;
     private  Date dataNasc;
+    
 
-    public Cidadao(String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
+    public Cidadao(int id, String nome, String BI, String genero, String Moradia, String Distrito, Date dataNasc) {
         this.nome = nome;
         this.BI = BI;
         this.genero = genero;
-        this.sobrenome = sobrenome;
         this.Moradia = Moradia;
         this.Distrito = Distrito;
-        this.dataNasc = dataNac;
+        this.dataNasc = dataNasc;
+        this.id = id;
     }
 
+    public Cidadao() {
+    }
     
-
     public String getNome() {
         return nome;
     }
@@ -40,21 +43,21 @@ public abstract class Cidadao {
         return genero;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setGenero(String genero) {
         this.genero = genero;
     }
 
     @Override
     public String toString() {
-        return "Cidadao{" + "nome=" + nome + ", BI=" + BI + ", genero=" + genero + ", sobrenome=" + sobrenome + ", dataNasc=" + dataNasc + ", Moradia=" + Moradia + ", Distrito=" + Distrito + '}';
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
+        return "Cidadao{" + "nome=" + nome + ", BI=" + BI + ", genero=" + genero + ", dataNasc=" + dataNasc + ", Moradia=" + Moradia + ", Distrito=" + Distrito + '}';
     }
 
     public Date  getDataNasc() {

@@ -40,7 +40,8 @@ public class tabelaCandidatos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tabela Candidatos");
-        setPreferredSize(new java.awt.Dimension(929, 600));
+
+        jPanel1.setBackground(new java.awt.Color(170, 108, 58));
 
         tabelaEleitores.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
         tabelaEleitores.setForeground(new java.awt.Color(0, 0, 0));
@@ -49,14 +50,22 @@ public class tabelaCandidatos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Sobrenome", "Genero", "Partido", "BI"
+                "ID", "Nome", "Genero", "Partido", "BI"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tabelaEleitores);
 
         jLabel3.setFont(new java.awt.Font("Square721 BT", 1, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Tabela de Eleitores");
+        jLabel3.setText("Tabela de Candidatos");
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Swis721 BT", 1, 16)); // NOI18N
@@ -65,27 +74,27 @@ public class tabelaCandidatos extends javax.swing.JFrame {
 
         jTextField2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 0));
+        jButton1.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Buscar");
 
-        jButton5.setBackground(new java.awt.Color(59, 0, 255));
+        jButton5.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         jButton5.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Listar");
 
-        jButton4.setBackground(new java.awt.Color(240, 0, 0));
+        jButton4.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         jButton4.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Eliminar");
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 0));
+        jButton3.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         jButton3.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Actualizar");
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
+        jButton2.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         jButton2.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Voltar");
@@ -98,7 +107,7 @@ public class tabelaCandidatos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 148, Short.MAX_VALUE)
+                        .addGap(0, 124, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -185,6 +194,12 @@ public class tabelaCandidatos extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(tabelaCandidatos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

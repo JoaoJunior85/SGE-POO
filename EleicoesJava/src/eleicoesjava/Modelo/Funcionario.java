@@ -10,15 +10,13 @@ import java.util.Date;
 
 
 public class Funcionario  extends Eleitor  {
-    private String codigoFuncionario, ID,celular;
+    private String codigoFuncionario, celular;
 
-    public Funcionario(String codigoFuncionario, String ID, String celular, String nome, String BI, String genero, String sobrenome, String Moradia, String Distrito, Date dataNac) {
-        super(nome, BI, genero, sobrenome, Moradia, Distrito, dataNac);
+    public Funcionario(String codigoFuncionario, String celular, String codigo, int id, String nome, String BI, String genero, String Moradia, String Distrito, Date dataNasc) {
+        super(codigo, id, nome, BI, genero, Moradia, Distrito, dataNasc);
         this.codigoFuncionario = codigoFuncionario;
-        this.ID = ID;
         this.celular = celular;
     }
-
 
     public String getCodigoFuncionario() {
         return codigoFuncionario;
@@ -26,14 +24,6 @@ public class Funcionario  extends Eleitor  {
 
     public void setCodigoFuncionario(String codigoFuncionario) {
         this.codigoFuncionario = codigoFuncionario;
-    }
-
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
     }
 
     public String getCelular() {
