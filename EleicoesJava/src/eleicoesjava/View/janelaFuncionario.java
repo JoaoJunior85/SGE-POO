@@ -185,7 +185,7 @@ public class janelaFuncionario extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(radioFemenino))
                                     .addComponent(txtMorada, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                                    .addComponent(txtCelular)
                                     .addComponent(txtBI)))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jButton1)

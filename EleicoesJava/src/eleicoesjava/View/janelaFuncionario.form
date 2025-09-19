@@ -97,7 +97,7 @@
                                           <Component id="radioFemenino" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Component id="txtMorada" alignment="1" max="32767" attributes="0"/>
-                                      <Component id="txtCelular" alignment="0" pref="186" max="32767" attributes="0"/>
+                                      <Component id="txtCelular" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtBI" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
