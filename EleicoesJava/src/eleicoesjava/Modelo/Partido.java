@@ -9,14 +9,18 @@ public class Partido {
     private int id;
     private String nome;
     private Candidato can;
-    private Integer numVotosPart;
+    private int numVotosPart;
 
-   public Partido(int id, String nome, Candidato can, Integer numVotosPart) {
+   public Partido(int id, String nome, Candidato can, int numVotosPart) {
         this.id = id;
         this.nome = nome;
         this.can = can;
         this.numVotosPart = numVotosPart;
     }
+   
+   public Partido(){
+       
+   }
     public String getNome() {
         return nome;
     }
@@ -33,11 +37,19 @@ public class Partido {
         this.can = can;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Integer getNumVotosPart() {
         return numVotosPart;
     }
 
-    public void setNumVotosPart(Integer numVotosPart) {
+    public void setNumVotosPart(int numVotosPart) {
         this.numVotosPart = numVotosPart;
     }
 

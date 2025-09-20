@@ -23,6 +23,18 @@ public abstract class Cidadao {
     public Cidadao() {
     }
     
+    
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+
     public String getNome() {
         return nome;
     }
@@ -41,14 +53,6 @@ public abstract class Cidadao {
 
     public String getGenero() {
         return genero;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setGenero(String genero) {

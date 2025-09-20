@@ -15,27 +15,26 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
-public class CandidatoDao implements Interface {
+public class CandidatoDao {
 
     public void Salvar(Candidato c) {
 
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement(" Insert into candidatos (numCandidado, senha, partido, numVotos, "
+            stmt = con.prepareStatement(" Insert into candidato (numCandidado, senha, partido, numVotos, "
                     + "codigo, nome, BI, genero, Moradia, Distrito, dataNascimento) Values (?,?,?,?,?,?,?,?,?,?,?,?) ");
             stmt.setInt(1, c.getNumCandidato());         // int
             stmt.setString(2, c.getSenha());             // String
             stmt.setString(3, c.getPart().getNome());    // Partido -> precisa converter p/ String ou ID
             stmt.setInt(4, c.getNumVotosCand());         // Integer
             stmt.setString(5, c.getCodigo());            // String
-            stmt.setInt(6, c.getId());                   // int
-            stmt.setString(7, c.getNome());              // String
-            stmt.setString(8, c.getBI());                // String
-            stmt.setString(9, c.getGenero());            // String
-            stmt.setString(10, c.getMoradia());          // String
-            stmt.setString(11, c.getDistrito());         // String
-            stmt.setDate(12, new java.sql.Date(c.getDataNasc().getTime()));
+            stmt.setString(6, c.getNome());              // String
+            stmt.setString(7, c.getBI());                // String
+            stmt.setString(8, c.getGenero());            // String
+            stmt.setString(9, c.getMoradia());          // String
+            stmt.setString(10, c.getDistrito());         // String
+            stmt.setDate(11, new java.sql.Date(c.getDataNasc().getTime()));
 
             stmt.executeUpdate();
             JOptionPane.showInternalMessageDialog(null, "Salvo com sucesso");
@@ -56,24 +55,21 @@ public class CandidatoDao implements Interface {
         List<Candidato> candidatos = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement(" Select * from candidatos");
+            stmt = con.prepareStatement(" Select id,nome, genero, BI, Partido  from candidato");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
-
-                while (rs.next()) {
-                    Candidato c = new Candidato();
-                    c.setId(rs.getInt("id"));
-                    c.setNome(rs.getString("nome"));
-                    c.setGenero(rs.getString("genero"));
-                    c.setBI(rs.getString("BI"));
-                    c.setGenero(rs.getString("genero"));
-                   
-                   
-                    candidatos.add(c);
-                }
-
+                Partido p = new Partido();
+                Candidato c = new Candidato();
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setGenero(rs.getString("genero"));
+                p.setNome(rs.getString("Partido"));  
+                c.setBI(rs.getString("BI"));
+                c.setPart(p);
+                candidatos.add(c);
             }
+
             System.out.println("Listado com sucesso");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao listar " + ex);
@@ -90,8 +86,8 @@ public class CandidatoDao implements Interface {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("Update candidatos set partido = ? , nome = ?, BI = ? , genero = ?,  Where id = ? ");
-           
+            stmt = con.prepareStatement("Update candidato set partido = ? , nome = ?, BI = ? , genero = ?  Where id = ? ");
+
             stmt.setString(3, c.getPart().getNome());    // Partido -> precisa converter p/ String ou ID
             stmt.setInt(6, c.getId());                   // int
             stmt.setString(7, c.getNome());              // String
@@ -113,7 +109,7 @@ public class CandidatoDao implements Interface {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         try {
-            stmt = con.prepareStatement("Delete from candidatos Where id = ? ");
+            stmt = con.prepareStatement("Delete from candidato Where id = ? ");
 
             stmt.setInt(1, c.getId());
 
@@ -127,8 +123,7 @@ public class CandidatoDao implements Interface {
         }
     }
 
-    @Override
-    public List<Candidato> busca(String nome) {
+    public List<Candidato> buscaNome(String nome) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -136,19 +131,57 @@ public class CandidatoDao implements Interface {
         List<Candidato> candidatos = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement(" Select * from candidatos where nome Like ?");
+            stmt = con.prepareStatement(" Select * from candidato where nome Like ?");
             stmt.setString(1, nome);
-            //      stmt.setString(1," %"+desc+"%");
+          stmt.setString(1," %"+nome+"%");
             rs = stmt.executeQuery();
 
             while (rs.next()) {
 
+                Partido p = new Partido();
                 Candidato c = new Candidato();
-                    c.setId(rs.getInt("id"));
-                    c.setNome(rs.getString("nome"));
-                    c.setGenero(rs.getString("genero"));
-                    c.setBI(rs.getString("BI"));
-                    c.setGenero(rs.getString("genero"));
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setGenero(rs.getString("genero"));
+                p.setNome(rs.getString("Partido"));  
+                c.setBI(rs.getString("BI"));
+                c.setPart(p);
+                candidatos.add(c);
+            }
+            System.out.println("Listado com sucesso");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao listar " + ex);
+        } finally {
+
+            ConnectionFactory.closeConnection(con, stmt, rs);
+        }
+
+        return candidatos;
+    }
+
+    public List<Candidato> buscaBi(String BI) {
+        Connection con = ConnectionFactory.getConnection();
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        List<Candidato> candidatos = new ArrayList<>();
+
+        try {
+            stmt = con.prepareStatement(" Select * from candidato where bi Like ?");
+            stmt.setString(2, BI);
+               stmt.setString(2," %"+BI+"%");
+            rs = stmt.executeQuery();
+
+            while (rs.next()) {
+
+                 Partido p = new Partido();
+                Candidato c = new Candidato();
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setGenero(rs.getString("genero"));
+                p.setNome(rs.getString("Partido"));  
+                c.setBI(rs.getString("BI"));
+                c.setPart(p);
                 candidatos.add(c);
 
             }
@@ -162,8 +195,5 @@ public class CandidatoDao implements Interface {
 
         return candidatos;
     }
-   
 
 }
-
-
