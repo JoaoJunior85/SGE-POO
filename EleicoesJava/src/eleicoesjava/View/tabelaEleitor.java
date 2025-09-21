@@ -42,11 +42,11 @@ public class tabelaEleitor extends javax.swing.JFrame {
 
     }
     
-    public void lerNome(String nome) {
+    public void lerBusca(String termo) {
         DefaultTableModel modelo = (DefaultTableModel) tbEleitor.getModel();
         modelo.setNumRows(0);
-        CandidatoDao dao = new CandidatoDao();
-        for (Eleitor e : dao.buscaNome(nome)) {
+        EleitorDao dao = new EleitorDao ();
+        for (Eleitor e : dao.busca(termo)) {
 
             modelo.addRow(new Object[]{
             e.getId(),
@@ -59,23 +59,7 @@ public class tabelaEleitor extends javax.swing.JFrame {
 
     }
     
-    public void lerBi(String BI) {
-        DefaultTableModel modelo = (DefaultTableModel) tbEleitor.getModel();
-        modelo.setNumRows(0);
-        CandidatoDao dao = new CandidatoDao();
-        for (Eleitor e : dao.buscaBi(BI)) {
-
-            modelo.addRow(new Object[]{
-                e.getId(),
-                e.getNome(),
-                e.getBI(),
-                e.getDataNasc(),
-                e.getDistrito(),});
-
-
-        }
-
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -139,6 +123,11 @@ public class tabelaEleitor extends javax.swing.JFrame {
         btnBusca.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
         btnBusca.setForeground(new java.awt.Color(255, 255, 255));
         btnBusca.setText("Buscar");
+        btnBusca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaActionPerformed(evt);
+            }
+        });
 
         btnVoltar.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         btnVoltar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
@@ -272,9 +261,14 @@ public class tabelaEleitor extends javax.swing.JFrame {
             lerTabela();
             
         } else {
-            JOptionPane.showMessageDialog(null, "Selecione um produto para Excluir");
+            JOptionPane.showMessageDialog(null, "Selecione um eleitor para Excluir");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnBuscaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaActionPerformed
+        // TODO add your handling code here:
+        lerBusca(txtBusca.getText());
+    }//GEN-LAST:event_btnBuscaActionPerformed
 
     /**
      * @param args the command line arguments

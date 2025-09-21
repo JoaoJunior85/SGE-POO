@@ -114,7 +114,7 @@ public class PartidoDao {
         }
     }
 
-    public List<Partido> buscaNome(String nome) {
+    public List<Partido> busca(String nome) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -129,7 +129,7 @@ public class PartidoDao {
 
             while (rs.next()) {
 
-                 Partido p = new Partido();
+                Partido p = new Partido();
                 Candidato c = new Candidato();
                 p.setId(rs.getInt("id"));
                 p.setNome(rs.getString("nome"));

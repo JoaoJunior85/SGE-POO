@@ -23,7 +23,7 @@ public class CandidatoDao {
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement(" Insert into candidato (numCandidado, senha, partido, numVotos, "
-                    + "codigo, nome, BI, genero, Moradia, Distrito, dataNascimento) Values (?,?,?,?,?,?,?,?,?,?,?,?) ");
+                    + "codigo, nome, BI, genero, Moradia, Distrito, dataNascimento) Values (?,?,?,?,?,?,?,?,?,?,?) ");
             stmt.setInt(1, c.getNumCandidato());         // int
             stmt.setString(2, c.getSenha());             // String
             stmt.setString(3, c.getPart().getNome());    // Partido -> precisa converter p/ String ou ID
@@ -88,11 +88,11 @@ public class CandidatoDao {
         try {
             stmt = con.prepareStatement("Update candidato set partido = ? , nome = ?, BI = ? , genero = ?  Where id = ? ");
 
-            stmt.setString(3, c.getPart().getNome());    // Partido -> precisa converter p/ String ou ID
-            stmt.setInt(6, c.getId());                   // int
-            stmt.setString(7, c.getNome());              // String
-            stmt.setString(8, c.getBI());                // String
-            stmt.setString(9, c.getGenero());            // String
+            stmt.setString(1, c.getPart().getNome());    // Partido -> precisa converter p/ String ou ID
+            stmt.setInt(2, c.getId());                   // int
+            stmt.setString(2, c.getNome());              // String
+            stmt.setString(3, c.getBI());                // String
+            stmt.setString(4, c.getGenero());            // String
             stmt.executeUpdate();
             JOptionPane.showInternalMessageDialog(null, "Atualizado com sucesso");
         } catch (SQLException ex) {
@@ -123,19 +123,20 @@ public class CandidatoDao {
         }
     }
 
-    public List<Candidato> buscaNome(String nome) {
+    public List<Candidato> busca(String termo) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-
+       String filtro =  "%" + termo + "%";
         List<Candidato> candidatos = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement(" Select * from candidato where nome Like ?");
-            stmt.setString(1, nome);
-          stmt.setString(1," %"+nome+"%");
+            stmt = con.prepareStatement(" Select * from candidato where nome Like ? or bi Like?");
+           
+            stmt.setString(1,  filtro);
+            stmt.setString(2,  filtro);
             rs = stmt.executeQuery();
-
+   
             while (rs.next()) {
 
                 Partido p = new Partido();
@@ -168,8 +169,7 @@ public class CandidatoDao {
 
         try {
             stmt = con.prepareStatement(" Select * from candidato where bi Like ?");
-            stmt.setString(2, BI);
-               stmt.setString(2," %"+BI+"%");
+            stmt.setString(8," %"+BI+"%");
             rs = stmt.executeQuery();
 
             while (rs.next()) {

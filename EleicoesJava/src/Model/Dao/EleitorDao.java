@@ -25,7 +25,7 @@ public class EleitorDao {
         PreparedStatement stmt = null;
         try {
             stmt = con.prepareStatement(" Insert into eleitor (codigo,nome, BI, genero, Moradia, "
-                    + "Distrito, dataNascimento) Values (?,?,?,?,?,?,?,?) ");
+                    + "Distrito, dataNascimento) Values (?,?,?,?,?,?,?) ");
             stmt.setString(1, e.getCodigo());            // String - código
             stmt.setString(2, e.getNome());              // String - nome
             stmt.setString(3, e.getBI());                // String - BI
@@ -83,11 +83,11 @@ public class EleitorDao {
         try {
             stmt = con.prepareStatement("Update eleitores set , nome = ?, BI = ? , dataNAscimento = ?, Distrito = ?  Where id = ? ");
 
-            stmt.setInt(2, e.getId());                   // int
-            stmt.setString(3, e.getNome());              // String
-            stmt.setString(4, e.getBI());                // String
-            stmt.setDate(5, (Date) e.getDataNasc());
-            stmt.setString(6, e.getDistrito());
+            stmt.setInt(1, e.getId());                   // int
+            stmt.setString(2, e.getNome());              // String
+            stmt.setString(3, e.getBI());                // String
+            stmt.setDate(4, (Date) e.getDataNasc());
+            stmt.setString(5, e.getDistrito());
             stmt.executeUpdate();
             JOptionPane.showInternalMessageDialog(null, "Atualizado com sucesso");
         } catch (SQLException ex) {
@@ -118,55 +118,21 @@ public class EleitorDao {
         }
     }
 
-    public List<Eleitor> buscaNome(String nome) {
+    public List<Eleitor> busca(String termo) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
         ResultSet rs = null;
-
+        String filtro = " %"+termo+"%";
         List<Eleitor> eleitores = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement(" Select * from eleitor where nome Like ?");
-            stmt.setString(1, nome);
-            //      stmt.setString(1," %"+desc+"%");
+            stmt = con.prepareStatement(" Select * from eleitor where nome Like ? or BI like?");
+            stmt.setString(1, filtro);
+            stmt.setString(2, filtro);
             rs = stmt.executeQuery();
 
             while (rs.next()) {
 
-                Eleitor e = new Eleitor();
-                e.setId(rs.getInt("id"));
-                e.setNome(rs.getString("nome"));
-                e.setBI(rs.getString("BI"));
-                e.setGenero(rs.getString("dataNascimento"));
-                e.setDistrito(rs.getString("Distrito"));
-                eleitores.add(e);
-
-            }
-            System.out.println("Listado com sucesso");
-        } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao listar " + ex);
-        } finally {
-
-            ConnectionFactory.closeConnection(con, stmt, rs);
-        }
-
-        return eleitores;
-    }
-
-    public List<Eleitor> buscaBi(String BI) {
-        Connection con = ConnectionFactory.getConnection();
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-
-        List<Eleitor> eleitores = new ArrayList<>();
-
-        try {
-            stmt = con.prepareStatement(" Select * from eleitores where bi Like ?");
-            stmt.setString(1, BI);
-            //      stmt.setString(1," %"+desc+"%");
-            rs = stmt.executeQuery();
-
-            while (rs.next()) {
                 Eleitor e = new Eleitor();
                 e.setId(rs.getInt("id"));
                 e.setNome(rs.getString("nome"));

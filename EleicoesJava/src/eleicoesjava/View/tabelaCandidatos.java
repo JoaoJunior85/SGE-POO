@@ -58,28 +58,11 @@ public class tabelaCandidatos extends javax.swing.JFrame {
 
     }
     
-    public void lerNome(String nome) {
+    public void lerBusca(String termo) {
         DefaultTableModel modelo = (DefaultTableModel) tbCandidatos.getModel();
         modelo.setNumRows(0);
         CandidatoDao dao = new CandidatoDao();
-        for (Candidato c : dao.buscaNome(nome)) {
-
-            modelo.addRow(new Object[]{
-                c.getId(),
-                c.getNome(),
-                c.getGenero(),
-                c.getPart().getNome(),
-                c.getBI(),});
-
-        }
-
-    }
-    
-    public void lerBi(String BI) {
-        DefaultTableModel modelo = (DefaultTableModel) tbCandidatos.getModel();
-        modelo.setNumRows(0);
-        CandidatoDao dao = new CandidatoDao();
-        for (Candidato c : dao.buscaBi(BI)) {
+        for (Candidato c : dao.busca(termo)) {
 
             modelo.addRow(new Object[]{
                 c.getId(),
@@ -125,7 +108,7 @@ public class tabelaCandidatos extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nome", "Genero", "Partido", "BI"
+                "ID", "Nome", "Genero", "Partido", "BI"
             }
         ));
         jScrollPane1.setViewportView(tbCandidatos);
@@ -189,37 +172,36 @@ public class tabelaCandidatos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelLayout.createSequentialGroup()
-                        .addGap(0, 124, Short.MAX_VALUE)
+                        .addGap(0, 148, Short.MAX_VALUE)
                         .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
-                                    .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(16, 16, 16)
-                                    .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(155, 155, 155))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addGroup(panelLayout.createSequentialGroup()
-                                        .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addGap(341, 341, 341))))
-                    .addComponent(jScrollPane1))
+                                .addComponent(btnListar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(btnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(155, 155, 155))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel1)
+                                .addGroup(panelLayout.createSequentialGroup()
+                                    .addComponent(txtBusca, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(315, 315, 315))
         );
         panelLayout.setVerticalGroup(
             panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(12, 12, 12)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
                 .addGap(0, 0, 0)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -227,7 +209,7 @@ public class tabelaCandidatos extends javax.swing.JFrame {
                     .addComponent(btnBuscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnVoltar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -264,19 +246,26 @@ public class tabelaCandidatos extends javax.swing.JFrame {
             lerTabela();
             
         } else {
-            JOptionPane.showMessageDialog(null, "Selecione um produto para Excluir");
+            JOptionPane.showMessageDialog(null, "Selecione um candidato para Excluir");
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        String busca = txtBusca.getText().trim();
-        if (busca.matches("\\d{12}[a-zA-Z]+")){
-            lerBi(busca);
-         
-        } else if (busca.matches("[a-zA-Z]")){
-           lerNome(busca);
-        }
+        lerBusca(txtBusca.getText().trim());
+        
+//        String busca = txtBusca.getText();
+//        
+//        
+//        if (busca.matches("\\d{12}[a-zA-Z]+")){
+//            lerBi(busca);
+//        JOptionPane.showMessageDialog(null, "Botao BI");
+//         
+//        } else if (busca.matches("[a-zA-Z]")){
+//           lerNome(busca);
+//                   JOptionPane.showMessageDialog(null, "Botao Nome");
+//
+//        }
          
     }//GEN-LAST:event_btnBuscarActionPerformed
 
