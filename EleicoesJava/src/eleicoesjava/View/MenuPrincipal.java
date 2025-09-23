@@ -113,6 +113,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private void btnCandidatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCandidatosActionPerformed
         // TODO add your handling code here:
         new tabelaEleitor().setVisible(true);
+        dispose();
     }//GEN-LAST:event_btnCandidatosActionPerformed
 
     private void btnPartidosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPartidosActionPerformed

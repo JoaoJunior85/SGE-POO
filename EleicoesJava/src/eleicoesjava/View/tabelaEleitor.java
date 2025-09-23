@@ -90,17 +90,17 @@ public class tabelaEleitor extends javax.swing.JFrame {
         tbEleitor.setForeground(new java.awt.Color(0, 0, 0));
         tbEleitor.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "B.I", "Nasciento", "Distrito"
+                "ID", "Nome", "B.I", "Nascimento", "Genero", "Distrito"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -108,9 +108,6 @@ public class tabelaEleitor extends javax.swing.JFrame {
             }
         });
         jScrollPane1.setViewportView(tbEleitor);
-        if (tbEleitor.getColumnModel().getColumnCount() > 0) {
-            tbEleitor.getColumnModel().getColumn(4).setResizable(false);
-        }
 
         txtBusca.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
 
