@@ -38,7 +38,7 @@ public class janelaEleitor extends javax.swing.JFrame {
         radioMasculino = new javax.swing.JRadioButton();
         radioFemenino = new javax.swing.JRadioButton();
         txtMorada = new javax.swing.JTextField();
-        comboDistrito = new javax.swing.JComboBox<>();
+        comboDistrito = new javax.swing.JComboBox<String>();
         txtBI = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -106,7 +106,7 @@ public class janelaEleitor extends javax.swing.JFrame {
 
         comboDistrito.setBackground(new java.awt.Color(244, 244, 146));
         comboDistrito.setFont(new java.awt.Font("Bernard MT Condensed", 0, 14)); // NOI18N
-        comboDistrito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Boane", "Magude", "Manhiça", "Marracuene", "Matola", "Moamba", "Namaacha", "KaMpfumo", "Nlhamankulu", "KaMaxaquene", "KaMavota", "KaMubukwana", "KaTembe", "KaNyaka", " ", " " }));
+        comboDistrito.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Boane", "Magude", "Manhiça", "Marracuene", "Matola", "Moamba", "Namaacha", "KaMpfumo", "Nlhamankulu", "KaMaxaquene", "KaMavota", "KaMubukwana", "KaTembe", "KaNyaka", " ", " " }));
         comboDistrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboDistritoActionPerformed(evt);
@@ -237,7 +237,7 @@ public class janelaEleitor extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
