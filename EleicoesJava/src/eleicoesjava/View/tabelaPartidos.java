@@ -130,7 +130,7 @@ public void lerBusca(String nome) {
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Swis721 BT", 1, 16)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Pesquisar (Nome/B.I)");
+        jLabel1.setText("Pesquisar");
 
         btnBuscar.setBackground(javax.swing.UIManager.getDefaults().getColor("OptionPane.warningDialog.titlePane.shadow"));
         btnBuscar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 16)); // NOI18N
