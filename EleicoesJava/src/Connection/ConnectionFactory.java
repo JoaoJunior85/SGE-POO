@@ -14,7 +14,11 @@ public class ConnectionFactory {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/sge";
     private static final String USER = "root";
+<<<<<<< HEAD
     private static final String PASS = "";
+=======
+    private static final String PASS = "1234";
+>>>>>>> 76c4d07a92cd550e1c69338a35e7ca15dafa8f58
 
     public static Connection getConnection() {
 
